@@ -13,18 +13,18 @@ $(() => {
       url: `http://taco-randomizer.herokuapp.com/${tacoTask}/`
     }).then((data) => {
       console.log(data);
-      baseLayer = data.base_layer;
-      condiment = data.condiment;
-      mixIn = data.mixin;
-      seasoning = data.seasoning;
-      shell = data.shell;
+      baseLayer = data.base_layer.name;
+      condiment = data.condiment.name;
+      mixIn = data.mixin.name;
+      seasoning = data.seasoning.name;
+      shell = data.shell.name;
       $taco = $('<div>').addClass('taco');
       $taco.html(
-        `<span>Base Layer: ${baseLayer}</span>
-        <span>Condiment: ${condiment}</span>
-        <span>Mix-in: ${mixIn}</span>
-        <span>Seasoning: ${seasoning}</span>
-        <span>Shell: ${shell}</span>
+        `<span>Base Layer: ${baseLayer}</span><br><br>
+        <span>Condiment: ${condiment}</span><br><br>
+        <span>Mix-in: ${mixIn}</span><br><br>
+        <span>Seasoning: ${seasoning}</span><br><br>
+        <span>Shell: ${shell}</span><br><br>
         <button class='another'>Nother One!</button>`
       );
       $('section').append($taco);
