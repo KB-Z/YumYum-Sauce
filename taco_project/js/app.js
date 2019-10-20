@@ -3,7 +3,6 @@ $(() => {
   tacoTask = '';
 
   const summonTaco = (event) => {
-    // $('section').empty();
     tacoTask = $(event.target).attr('id');
     console.log(tacoTask);
     // tacoQuantity = $('#number').val();
@@ -13,6 +12,7 @@ $(() => {
       url: `http://taco-randomizer.herokuapp.com/${tacoTask}/`
     }).then((data) => {
       console.log(data);
+      event.stopImmediatePropagation();
       baseLayer = data.base_layer.name;
       condiment = data.condiment.name;
       mixIn = data.mixin.name;
@@ -27,11 +27,18 @@ $(() => {
         <span>Shell: ${shell}</span><br><br>
         <button id='${tacoTask}' class='another'>'nother one!</button>`
       );
-      $('section').append($taco);
-      $('.another').on('click', summonTaco);
+      $('.another').off('click'); // holy crap - if this wasn't the most obvious but hassle filled find...
+      if ($(event.target).attr('class') === 'another') {
+        $('section').append($taco);
+        $('.another').on('click', summonTaco);
+      } else {
+        $('section').empty();
+        $('section').append($taco);
+        $('.another').on('click', summonTaco);
+      }
 
     });
   };
-  $('button').on('click', summonTaco);
+  $('.findTaco').on('click', summonTaco);
 
 });
