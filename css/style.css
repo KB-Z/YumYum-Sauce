@@ -1,7 +1,54 @@
-* {
-  background: white;
+body {
+  background: blanchedalmond;
+  text-align: center;
+}
+
+h1 {
+  font-style: italic;
+  font-weight: lighter;
+  color: tomato;
+  font-size: 140px;
+}
+
+button {
+  background-color: Gainsboro;
+  font-style: italic;
+  font-weight: 400;
+  color: GhostWhite;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 0 20px 0;
 }
 
 span {
-  font-style: italic;
+  font-weight: bold;
+  padding: 10px 15%;
+  text-align: left;
+  margin: 10px;
+  /* background: Ivory; */
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: grey
+}
+
+#navbar button {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px;
+  text-decoration: none;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
 }
