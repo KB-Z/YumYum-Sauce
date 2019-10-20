@@ -9,7 +9,7 @@ $(() => {
     // console.log(tacoQuantity);
 
     $.ajax ({
-      url: `http://taco-randomizer.herokuapp.com/${tacoTask}/`
+      url: `https://taco-randomizer.herokuapp.com/${tacoTask}/`
     }).then((data) => {
       console.log(data);
       event.stopImmediatePropagation();
