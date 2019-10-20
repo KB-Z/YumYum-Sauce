@@ -3,8 +3,8 @@ $(() => {
   tacoTask = '';
 
   const summonTaco = (event) => {
-    $('section').empty();
-    tacoTask = $(event.target).attr('class');
+    // $('section').empty();
+    tacoTask = $(event.target).attr('id');
     console.log(tacoTask);
     // tacoQuantity = $('#number').val();
     // console.log(tacoQuantity);
@@ -18,16 +18,17 @@ $(() => {
       mixIn = data.mixin.name;
       seasoning = data.seasoning.name;
       shell = data.shell.name;
-      $taco = $('<div>').addClass('taco');
+      $taco = $('<div>').addClass('taco');//.addClass(tacoTask);
       $taco.html(
         `<span>Base Layer: ${baseLayer}</span><br><br>
         <span>Condiment: ${condiment}</span><br><br>
         <span>Mix-in: ${mixIn}</span><br><br>
         <span>Seasoning: ${seasoning}</span><br><br>
         <span>Shell: ${shell}</span><br><br>
-        <button class='another'>Nother One!</button>`
+        <button id='${tacoTask}' class='another'>'nother one!</button>`
       );
       $('section').append($taco);
+      $('.another').on('click', summonTaco);
 
     });
   };
