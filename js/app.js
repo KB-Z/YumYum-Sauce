@@ -32,11 +32,11 @@ $(() => {
       shell = data.shell.name;
       $taco = $('<div>').addClass('taco');//.addClass(tacoTask);
       $taco.html(
-        `<span>Base Layer: ${baseLayer}</span><br>
-        <span>Condiment: ${condiment}</span><br>
-        <span>Mix-in: ${mixIn}</span><br>
-        <span>Seasoning: ${seasoning}</span><br>
-        <span>Shell: ${shell}</span><br>
+        `<span class="tacoText">Base Layer:&nbsp;</span><span> ${baseLayer}</span><br>
+        <span class="tacoText">Condiment:&nbsp;</span><span> ${condiment}</span><br>
+        <span class="tacoText">Mix-in:&nbsp;</span><span> ${mixIn}</span><br>
+        <span class="tacoText">Seasoning:&nbsp;</span><span> ${seasoning}</span><br>
+        <span class="tacoText">Shell:&nbsp;</span><span> ${shell}</span><br>
         <button id='${tacoTask}' class='another'>'nother one!</button>`
       );
       $('.another').off('click'); // holy crap - if this wasn't the most obvious but hassle filled find...
