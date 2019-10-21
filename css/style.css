@@ -1,3 +1,7 @@
+* {
+    font-family: 'Pacifico', cursive;
+}
+
 body {
   background: blanchedalmond;
   text-align: center;
@@ -8,39 +12,62 @@ h1 {
   font-weight: lighter;
   color: tomato;
   font-size: 140px;
+  text-shadow: 7px 3px 9px rgba(255,99,71,0.39);
 }
 
 button {
   background-color: Gainsboro;
-  font-style: italic;
+  /* font-style: italic; */
+  font-size: 18px;
   font-weight: 400;
-  color: GhostWhite;
+  color: black;
   border: 1px solid black;
   border-radius: 10px;
   padding: 10px;
   margin: 20px 0 20px 0;
+  transition-duration: 0.4s;
 }
 
 span {
-  font-weight: bold;
-  padding: 10px 15%;
-  text-align: left;
-  margin: 10px;
-  /* background: Ivory; */
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.findTaco {
+  margin: 0;
+}
+
+.taco {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 28%;
+  margin-right: 28%;
+  border: 10px double rgba(255,99,71,0.48);
+  border-radius: 20px 40px 20px 40px;
+  /* border: 6px solid tomato; */
+  background: Ivory url('img/taco-cute-cartoon.png') no-repeat scroll -10px -10px;
+  background-size: 25%;
+  box-shadow: 10px 3px 17px 9px rgba(0,0,0,0.37);
+}
+
+button:hover {
+  background-color: white;
 }
 
 #navbar {
   overflow: hidden;
-  background-color: grey
+  background-color: grey;
+  text-align: center;
 }
 
 #navbar button {
-  float: left;
-  display: block;
-  color: #f2f2f2;
+  float: none;
+  display: inline-block;
+  color: black;
   text-align: center;
   padding: 14px;
   text-decoration: none;
+  width: 50%;
 }
 
 .sticky {

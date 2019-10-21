@@ -16,14 +16,14 @@ $(() => {
 
   const summonTaco = (event) => {
     tacoTask = $(event.target).attr('id');
-    console.log(tacoTask);
+    // console.log(tacoTask);
     // tacoQuantity = $('#number').val();
     // console.log(tacoQuantity);
 
     $.ajax ({
       url: `https://taco-randomizer.herokuapp.com/${tacoTask}/`
     }).then((data) => {
-      console.log(data);
+      // console.log(data);
       event.stopImmediatePropagation();
       baseLayer = data.base_layer.name;
       condiment = data.condiment.name;
@@ -32,11 +32,11 @@ $(() => {
       shell = data.shell.name;
       $taco = $('<div>').addClass('taco');//.addClass(tacoTask);
       $taco.html(
-        `<span>Base Layer: ${baseLayer}</span><br><br>
-        <span>Condiment: ${condiment}</span><br><br>
-        <span>Mix-in: ${mixIn}</span><br><br>
-        <span>Seasoning: ${seasoning}</span><br><br>
-        <span>Shell: ${shell}</span><br><br>
+        `<span>Base Layer: ${baseLayer}</span><br>
+        <span>Condiment: ${condiment}</span><br>
+        <span>Mix-in: ${mixIn}</span><br>
+        <span>Seasoning: ${seasoning}</span><br>
+        <span>Shell: ${shell}</span><br>
         <button id='${tacoTask}' class='another'>'nother one!</button>`
       );
       $('.another').off('click'); // holy crap - if this wasn't the most obvious but hassle filled find...
