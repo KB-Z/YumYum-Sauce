@@ -20,11 +20,10 @@ $(() => {
       tacoId = $(event.target).parent().attr('id');
       console.log(tacoId);
       var jsonTaco = JSON.stringify($taco)
-      localStorage.setItem(`${tacoId}`, jsonTaco);
-      localStorage.getItem(`${tacoId}`) () => {
-        
-      }
-
+      localStorage.setItem(`${tacoId}`, `${jsonTaco}`);
+      var unJsonTaco = localStorage.getItem(`${tacoId}`);
+      var freshTaco = JSON.parse(unJsonTaco);
+      console.log(freshTaco);
     } if ($(event.target).attr('class') === 'clear') {
       localStorage.clear();
     } if ($(event.target).attr('class') === 'remove') {
