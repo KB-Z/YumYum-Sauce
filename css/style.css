@@ -93,3 +93,12 @@ button:hover {
 .sticky + .content {
   padding-top: 60px;
 }
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 60px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+}
