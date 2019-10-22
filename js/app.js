@@ -5,7 +5,7 @@ $(() => {
   window.onscroll = function() {myFunction()};
   var navbar = document.getElementById("navbar");
   var sticky = navbar.offsetTop;
-  function myFunction() {
+  function stickyNav() {
     if (window.pageYOffset >= sticky) {
       navbar.classList.add("sticky")
     } else {
@@ -58,7 +58,7 @@ $(() => {
         <span class="tacoText">Mix-in:&nbsp;</span><span> ${mixIn}</span><br>
         <span class="tacoText">Seasoning:&nbsp;</span><span> ${seasoning}</span><br>
         <span class="tacoText">Shell:&nbsp;</span><span> ${shell}</span><br>
-        <button id='${tacoTask}' class='another'>'nother one!</button><button class='add'>Save me for later!</button>`
+        <button id='${tacoTask}' class='another'>'nother one!`//</button><button class='add'>Save me for later!</button>
       );
       $('.another').off('click'); // holy crap - if this wasn't the most obvious but hassle filled find...
       $('.add').off('click');
