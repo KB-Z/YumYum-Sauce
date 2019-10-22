@@ -94,7 +94,7 @@ button:hover {
   padding-top: 60px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 838px) {
   h1 {
     font-size: 60px;
   }
