@@ -13,6 +13,18 @@ $(() => {
     }
   }
 
+  // var myObjectJson = JSON.stringify(myObject);
+  //  localStorage.setItem("trish", myObjectJson);
+  const storeTaco = (event) => {
+    if ($(event.target).attr('class') === 'add') {
+      var jsonTaco = JSON.stringify($taco)
+      localStorage.setItem('favTaco', $taco);
+    } else if ($(event.target).attr('class') === 'remove') {
+      // document.getElementById('result').innerHTML = localStorage.favTaco;
+    }
+  };
+
+    i = 0;
 
   const summonTaco = (event) => {
     tacoTask = $(event.target).attr('id');
@@ -30,23 +42,27 @@ $(() => {
       mixIn = data.mixin.name;
       seasoning = data.seasoning.name;
       shell = data.shell.name;
-      $taco = $('<div>').addClass('taco');//.addClass(tacoTask);
+      i++;
+      $taco = $('<div>').addClass('taco').attr('id', i);//.addClass(tacoTask);
       $taco.html(
         `<span class="tacoText">Base Layer:&nbsp;</span><span> ${baseLayer}</span><br>
         <span class="tacoText">Condiment:&nbsp;</span><span> ${condiment}</span><br>
         <span class="tacoText">Mix-in:&nbsp;</span><span> ${mixIn}</span><br>
         <span class="tacoText">Seasoning:&nbsp;</span><span> ${seasoning}</span><br>
         <span class="tacoText">Shell:&nbsp;</span><span> ${shell}</span><br>
-        <button id='${tacoTask}' class='another'>'nother one!</button>`
+        <button id='${tacoTask}' class='another'>'nother one!</button><button class='add'>Save me for later!</button>`
       );
       $('.another').off('click'); // holy crap - if this wasn't the most obvious but hassle filled find...
+      $('.add').off('click');
       if ($(event.target).attr('class') === 'another') {
         $('section').append($taco);
         $('.another').on('click', summonTaco);
+        $('.add').on('click', storeTaco);
       } else {
         $('section').empty();
         $('section').append($taco);
         $('.another').on('click', summonTaco);
+        $('.add').on('click', storeTaco);
       }
 
     });
