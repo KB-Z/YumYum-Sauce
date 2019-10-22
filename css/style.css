@@ -40,10 +40,13 @@ button {
 span {
   display: inline-block;
   margin-top: 10px;
+  font-family: 'Indie Flower', cursive;
+  font-style: bold;
 }
 
 .tacoText {
   color: tomato;
+  font-family: 'Pacifico', cursive;
 }
 
 .findTaco {
@@ -78,7 +81,7 @@ button:hover {
 
 #navbar button {
   float: none;
-  display: inline; 
+  display: inline;
   /* color: #191919; */
   text-align: center;
   padding: 14px;
