@@ -17,13 +17,22 @@ $(() => {
   //  localStorage.setItem("trish", myObjectJson);
   const storeTaco = (event) => {
     if ($(event.target).attr('class') === 'add') {
+      tacoId = $(event.target).parent().attr('id');
+      console.log(tacoId);
       var jsonTaco = JSON.stringify($taco)
-      localStorage.setItem('favTaco', $taco);
-    } else if ($(event.target).attr('class') === 'remove') {
-      // document.getElementById('result').innerHTML = localStorage.favTaco;
+      localStorage.setItem(`${tacoId}`, jsonTaco);
+      localStorage.getItem(`${tacoId}`) () => {
+        
+      }
+
+    } if ($(event.target).attr('class') === 'clear') {
+      localStorage.clear();
+    } if ($(event.target).attr('class') === 'remove') {
+      localStorage.removeItem(`${tacoId}`);
+      location.reload();
     }
   };
-
+  $('.clear').on('click', storeTaco);
     i = 0;
 
   const summonTaco = (event) => {
