@@ -2,7 +2,7 @@ $(() => {
 
 
   tacoTask = '';
-  window.onscroll = function() {myFunction()};
+  window.onscroll = function() {stickyNav()};
   var navbar = document.getElementById("navbar");
   var sticky = navbar.offsetTop;
   function stickyNav() {
